@@ -35,13 +35,13 @@
     $ip           = $_SERVER['REMOTE_ADDR'];
     $hostname     = gethostbyaddr($_SERVER['REMOTE_ADDR']);
     $destinataire = "jego.jj@gmail.com";
-    $objet        = "julienjego.fr" . $sujet;
+    $objet        = "Contact à partir de julienjego.fr de " . $nom;
     $contenu      = "Nom de l'expéditeur : " . $nom . "\r\n";
     $contenu     .= $message."\r\n\n";
     $contenu     .= "Adresse IP de l'expéditeur : " . $ip . "\r\n";
     $contenu     .= "DLSAM : " . $hostname;
   
-    $headers  = 'Contact julienjego.fr' . 'From: ' . $email . ' \r\n'; // ici l'expediteur du mail
+    $headers  = 'Message provenant' . ' de : ' . $email; // ici l'expediteur du mail
     /*$headers .= 'Content-Type: text/plain; charset="ISO-8859-1"; DelSp="Yes"; format=flowed \r\n';
     $headers .= 'Content-Disposition: inline \r\n';
     $headers .= 'Content-Transfer-Encoding: 7bit \r\n';
@@ -54,7 +54,7 @@
     // ENCAPSULATION DES DONNEES 
     else:
         mail($destinataire,$objet,utf8_decode($contenu),$headers);
-        echo 'Message envoyé ! Merci';
+        echo 'Message envoyé ! Merci. <a href="http://www.julienjego.fr">Retourner sur le site</a> ';
     endif;
  
     // Les messages d'erreurs ci-dessus s'afficheront si Javascript est désactivé
